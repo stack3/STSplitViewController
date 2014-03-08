@@ -1,6 +1,5 @@
 //
 //  STSplitViewController.m
-//  STSplitViewController
 //
 //  Created by EIMEI on 2013/02/02.
 //  Copyright (c) 2013 stack3.net (http://stack3.net/)
@@ -116,6 +115,10 @@
     _masterViewController = masterViewController;
     if (_masterViewController) {
         [self addChildViewController:_masterViewController];
+        
+        if ([_masterViewController isKindOfClass:[UINavigationController class]]) {
+            [[[((UINavigationController *)_masterViewController) topViewController] view] setNeedsLayout];
+        }
     }
     self.splitView.masterView = _masterViewController.view;
 }
@@ -151,6 +154,10 @@
     _detailViewController = detailViewController;
     if (_detailViewController) {
         [self addChildViewController:_detailViewController];
+        
+        if ([_detailViewController isKindOfClass:[UINavigationController class]]) {
+            [[[((UINavigationController *)_detailViewController) topViewController] view] setNeedsLayout];
+        }
     }
 
     self.splitView.detailView = _detailViewController.view;

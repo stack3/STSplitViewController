@@ -1,6 +1,5 @@
 //
 //  STSplitView.h
-//  STSplitViewController
 //
 //  Created by EIMEI on 2013/02/02.
 //  Copyright (c) 2013 stack3.net (http://stack3.net/)
